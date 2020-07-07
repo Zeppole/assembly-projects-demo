@@ -1,0 +1,28 @@
+server:
+  port: 8082
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 600
+  max-http-header-size: 102400
+  context-path: /utils-dev/
+
+spring:
+  application:
+    name: nacos-consumer-service
+
+provider:
+  demo:
+    application:
+      name: nacos-provider-service-local
+    parse.url: /provider/parse
+  python:
+    application:
+      name: nacos-python-service
+    parse.url: /hello
+
+sentinel:
+  rules: [
+  {source: test, count: 1},
+  {source: hello, count: 2},
+  {source: helloAnother, count: 2}
+  ]

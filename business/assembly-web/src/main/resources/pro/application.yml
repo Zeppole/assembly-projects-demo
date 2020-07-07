@@ -1,0 +1,17 @@
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 600
+  max-http-header-size: 102400
+  context-path: /web-pro/
+
+spring:
+  application:
+    name: thin-body-service
+
+provider:
+  demo:
+    application:
+      name: nacos-provider-service
+    parse.url: /provider/parse
